@@ -2,8 +2,6 @@
 
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 body{
     font-family: Inter;
@@ -72,7 +70,7 @@ h2:last-child::after{
 }
 h1{
     font-size: 64px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .info{
     font-size: 29px;
@@ -198,4 +196,6 @@ h3{
     background-color: rgba(255, 255, 255, 0.49);
     border-left: 33px solid #D40D1F;
     padding: 15px 26px;
+    display: flex;
+    align-items: center;
 }
