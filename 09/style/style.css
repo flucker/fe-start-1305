@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --main-font-family: 'Inter';
+    --main-color: #0C0D1F;
+    --secondary-color: #fff;
+    --content-font-size: 14px;
+    --heading-font-size: 16px;
+    --content-small-font-size: 12px;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    font-size: var(--content-font-size);
+    color: var(--main-color);
+    margin: 0 auto;
+}
+main{
+    width: 1024px;
+    margin: 0 auto;
+}
+.wrapper{
+    width: 84%;
+    margin: 75px 82px;
+}
+.user-wrapper{
+    display: grid;
+    grid-template-columns: 24% 32% 32%;
+    grid-template-areas:
+    "photo about about"
+    "photo goals frustrations";
+    column-gap: 40px;
+    row-gap: 32px;
+    margin-bottom: 40px;
+}
+.photo-wrapper{
+    grid-area: photo;
+   
+}
+.photo-content-wrapper{
+    position: relative;
+}
+h2{
+    font-size: var(--heading-font-size);
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.photo-block{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 8px;
+    margin: 11px 9px;
+}
+.role{
+    color: #F9CB28;
+    margin-bottom: 12px;
+}
+.quote{
+    font-size: var(--content-small-font-size);
+    line-height: 14px;
+    color: var(--secondary-color);
+}
+img{
+    width: 100%;
+    border-radius: 12px;   
+}
+.about-wrapper{
+    grid-area: about;
+}
+.about-content-wrapper{
+    padding: 16px 24px;
+    background-color: #F1EFFE;
+    border-radius: 12px;
+}
+.personal-info{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 24px;
+    justify-content: start;
+    color: rgba(12, 13, 31, 0.5);
+    margin-bottom: 25px;
+}
+.about-content{
+    line-height: 17px;
+}
+h3{
+    font-size: var(--heading-font-size);
+    font-weight: 600; 
+    margin-bottom: 8px;
+}
+.goals-wrapper{
+    grid-area: goals;
+}
+h4{
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.goals-content-wrapper, .frustrations-content-wrapper{
+    padding: 8px;
+    background-color: #F1EFFE;
+    border-radius: 12px;    
+}
+.goals-content-wrapper i{
+    font-size: 16px;
+    color: #27AE60;
+}
+li{
+    width: 71%;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 8px;
+}
+li:last-child{
+    margin-bottom: 0;
+}
+.frustrations-wrapper{
+    grid-area: frustrations;
+}
+.frustrations-content-wrapper i{
+    font-size: 16px;
+    color: #EB5757;
+}
+@media (max-width:768px) {
+    main{
+        width: 100%;
+    }
+    .wrapper{
+        margin: 40px auto;
+    }
+    .user-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 32px;
+    }
+    .goals-wrapper{
+        width: 100%;
+    }
+    .frustrations-wrapper{
+        width: 100%;
+    }
+}
