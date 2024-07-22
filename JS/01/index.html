@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*
+         1. **Оголошення змінних**
+         - Оголосіть змінні за допомогою `let`, `const` та `var`.
+         - Присвойте кожній змінній значення різних примітивних типів даних (число, рядок, булеве значення).
+         */
+         var varNumber;
+         var varString;
+         var varBoolean;
+         varNumber = 1;
+         varString = "String";
+         varBoolean = true;
+
+         /*      
+         2. **Арифметичні оператори**
+            - Створіть дві змінні з числовими значеннями.
+            - Виконайте з ними основні арифметичні операції: додавання, віднімання, множення, ділення, залишок від ділення.
+            - Виведіть результати операцій за допомогою `alert` та `document.write`.
+         */
+         var num1 = 10;
+         var num2 = 3;
+         var result;
+
+         result = num1 + num2;
+         document.write(num1 + " + " + num2 + " = " + result + "<br>");
+
+         result = num1 - num2;
+         document.write(num1 + " - " + num2 + " = " + result + "<br>");
+
+         result = num1 * num2;
+         document.write(num1 + " * " + num2 + " = " + result + "<br>");
+
+         result = num1 / num2;
+         document.write(num1 + " / " + num2 + " = " + result + "<br>");
+
+         result = num1 % num2;
+         document.write(num1 + " % " + num2 + " = " + result + "<br>");
+         document.write("<hr>");
+         /*
+         3. **Робота з примітивними типами даних**
+            - Створіть змінні з різними примітивними типами даних (число, рядок, булеве значення, `null`, `undefined`).
+            - Виведіть тип кожної змінної за допомогою `typeof`.
+            - Виведіть значення та тип кожної змінної за допомогою `alert` та `document.write`.
+         */
+         var numVar = 123;
+         var strVar = "string";
+         var boolVar = false;
+         var nullVar = null;
+         var undefinedVar = undefined;
+
+         document.write(numVar + " - " + typeof numVar + "<br>");
+         document.write(strVar + " - " + typeof strVar + "<br>");
+         document.write(boolVar + " - " + typeof boolVar + "<br>");
+         document.write(nullVar + " - " + typeof nullVar + "<br>");
+         document.write(undefinedVar + " - " + typeof undefinedVar + "<br>");
+         document.write("<hr>");
+         /*
+         4. **Завдання на самостійне опрацювання**
+            - Створіть змінну з рядком, що містить ваше ім'я.
+            - Створіть змінну з числом, що містить ваш вік.
+            - Створіть булеву змінну, що відповідає на питання "Чи любите ви програмувати?".
+            - Виведіть ці значення за допомогою `alert` та `document.write`.
+         */
+         var name = "Eugene";
+         var age = 34;
+         var likeProgramming = true;
+
+         document.write("ім'я " + name + "<br>");     
+         document.write("вік " + age + "<br>");     
+         document.write("Чи любите ви програмувати? " + likeProgramming + "<br>");     
+
+         /*
+         5. **Пріоритетність операторів**
+            - Створіть декілька виразів з використанням різних арифметичних операторів та дужок.
+            Початкові змінні:  x = 6, y = 14, z =4. При кожній новій операції переприсвоюйте змінні.
+            https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+            *    x += y - x++ * z;
+            *    z = --x - y * 5;
+            *    y /= x + 5 % z;
+            *    z - x++ + y * 5; 
+            *    x = y - x++ * z;  
+            - Визначте, послідовність роботи операторів.
+            - Виведіть результати кожного кроку обчислень у консолі.        
+         */
+         var x; 
+         var y; 
+         var z;
+
+         x = 6; 
+         y = 14; 
+         z = 4;
+         console.log(x += y - x++ * z);
+         /*
+         1. x++ => 6
+         2. 6 * z => 24
+         3. y - 24 => -10
+         4. x += -10 => -4
+         */
+
+         x = 6; 
+         y = 14; 
+         z = 4;
+         console.log(z = --x - y * 5);
+         /*
+         1. --x => 5
+         2. y * 5 => 70
+         3. 5 - 70 => -65
+         4. z = -65 => -65
+         */
+
+         x = 6; 
+         y = 14; 
+         z = 4;
+         console.log(y /= x + 5 % z);
+         /*
+         1. 5 % z => 1
+         2. x + 1 => 7
+         3. y /= 7 => 2
+         */         
+
+         x = 6; 
+         y = 14; 
+         z = 4;
+         console.log(z - x++ + y * 5);
+         /*
+         1. x++ => 6
+         2. y * 5 => 70
+         3. z - 6 => -2
+         4. -2 + 70 => 68
+         */
+
+         x = 6; 
+         y = 14; 
+         z = 4;
+         console.log(x = y - x++ * z);   
+         /*
+         1. x++ => 6
+         2. 6 * z => 24
+         3. y - 24 => -10
+         4. x = -10 => -10
+         */              
+    </script>
+</body>
+</html>
