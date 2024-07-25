@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* ### Завдання 1: Перевірка числа
+        Напишіть програму, яка приймає число від користувача і перевіряє, чи є воно парним або непарним. Якщо число парне, виведіть "Число парне", якщо непарне - "Число непарне". */
+        let number = prompt("Введіть число", "0");
+        if (number % 2 === 0) {
+            document.write("Число парне");
+        } else {
+            document.write("Число непарне");
+        }
+        document.write("<hr>");
+        /* ### Завдання 2: Перевірка віку
+        Напишіть програму, яка приймає вік користувача і виводить:
+        - "Дитина", якщо вік менше 12 років.
+        - "Підліток", якщо вік від 12 до 18 років.
+        - "Дорослий", якщо вік від 18 до 60 років.
+        - "Пенсіонер", якщо вік більше 60 років. */
+        let age = prompt("Введіть Ваш вік", "0");
+        if (age < 12) {
+            document.write("Дитина");
+        } else if (age < 18) {
+            document.write("Підліток");
+        } else if (age < 60) {
+            document.write("Дорослий");
+        } else {
+            document.write("Пенсіонер");
+        }
+        document.write("<hr>");
+        /* ### Завдання 3: Таблиця множення
+        Напишіть програму, яка виводить таблицю множення для чисел від 1 до 10. Використовуйте вкладені цикли. */
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 10; j++) {
+                let result = i * j;
+                document.write(`${j} * ${i} = ${result}<br>`);
+            }
+            document.write("<br><br>");
+        }
+        document.write("<hr>");
+        /* ### Завдання 4: Сума чисел
+        Напишіть програму, яка обчислює суму всіх чисел від 1 до заданого користувачем числа. Наприклад, якщо користувач введе 5, програма має вивести 15, оскільки 1+2+3+4+5 = 15. */
+        let userNumber = prompt("Введіть число", "0");
+        let result = 0;
+        for (let i = 1; i <= userNumber; i++) {
+            result += i;
+        }
+        document.write(result);
+        document.write("<hr>");
+        /* ### Завдання для малювання фігур:
+        Фігурки мають виводитись на сторінку за допомогою document.write */
+
+        /* ### Завдання 5: Трикутник
+        Напишіть програму, яка малює прямокутний трикутник з зірочок (`*`). Висота трикутника повинна бути задана користувачем.
+        ```javascript
+        let height = parseInt(prompt("Введіть висоту трикутника:"));
+        for (let i = 1; i <= height; i++) {
+            console.log('*'.repeat(i));
+        }
+        ``` */
+        let height1 = parseInt(prompt("Введіть висоту трикутника:"));
+        document.write("<pre>");
+        for (let i = 1; i <= height1; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write("*&nbsp;");
+            }
+            document.write("<br>");
+        }
+        document.write("</pre>");
+        document.write("<hr>");
+        /* ### Завдання 6: Рівнобедрений трикутник
+        Напишіть програму, яка малює рівнобедрений трикутник з зірочок (`*`). Висота трикутника повинна бути задана користувачем.
+        ```javascript
+        let height = parseInt(prompt("Введіть висоту рівнобедреного трикутника:"));
+        for (let i = 1; i <= height; i++) {
+            console.log(' '.repeat(height - i) + '*'.repeat(2 * i - 1));
+        }
+        ``` */
+        let height2 = parseInt(prompt("Введіть висоту рівнобедреного трикутника:"));
+        document.write("<pre>");
+        for (let i = 1; i <= height2; i++) {
+            for (let j = 1; j <= height2-i; j++) {
+                document.write(" &nbsp;");
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write("*&nbsp;");
+            }   
+            document.write("<br>");
+        }
+        document.write("</pre>");
+        document.write("<hr>");
+        /* ### Завдання 7: Порожній прямокутник
+        Напишіть програму, яка малює порожній прямокутник з зірочок (`*`). Висота і ширина прямокутника повинні бути задані користувачем.
+        ```javascript
+        let height = parseInt(prompt("Введіть висоту прямокутника:"));
+        let width = parseInt(prompt("Введіть ширину прямокутника:"));
+        for (let i = 1; i <= height; i++) {
+            if (i === 1 || i === height) {
+                console.log('*'.repeat(width));
+            } else {
+                console.log('*' + ' '.repeat(width - 2) + '*');
+            }
+        }
+        ``` */
+        let height3 = parseInt(prompt("Введіть висоту прямокутника:"));
+        let width = parseInt(prompt("Введіть ширину прямокутника:"));
+        document.write("<pre>");
+        for (let i = 1; i <= height3; i++) {
+            for (let j = 1; j <= width; j++) {
+                if (i == 1 || i == height3 || j == 1 || j == width) {
+                    document.write("*&nbsp;");
+                }
+                else {
+                    document.write(" &nbsp;");
+                }
+            }
+            document.write("<br>");
+        }
+        document.write("</pre>");
+        document.write("<hr>");
+        /* ### Завдання 8: Ромб
+        Напишіть програму, яка малює ромб з зірочок (`*`). Висота ромба (кількість рядків від середини до верхівки) повинна бути задана користувачем.
+        ```javascript
+        let height = parseInt(prompt("Введіть висоту ромба (половина висоти):"));
+        for (let i = 1; i <= height; i++) {
+            console.log(' '.repeat(height - i) + '*'.repeat(2 * i - 1));
+        }
+        for (let i = height - 1; i >= 1; i--) {
+            console.log(' '.repeat(height - i) + '*'.repeat(2 * i - 1));
+        }
+        ```   */      
+        let height4 = parseInt(prompt("Введіть висоту ромба (половина висоти):"));
+        document.write("<pre>");
+        for (let i = 1; i <= height4; i++) {
+            for (let j = 1; j <= height4-i; j++) {
+                document.write(" &nbsp;");
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write("*&nbsp;");
+            }       
+            document.write("<br>");
+        }
+        for (let i = 1; i <= height4-1; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write(" &nbsp;");
+            }
+            for (let j = 1; j <= 2 * (height4-i) - 1; j++) {
+                document.write("*&nbsp;");
+            }      
+            document.write("<br>");
+        }
+        document.write("</pre>");
+    </script>
+</body>
+</html>
