@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Дані два масиви: ['a', 'b', 'c'] та [1, 2, 3]. Об'єднайте їх разом. */
+        let array1 = ['a', 'b', 'c'];
+        let array2 = [1, 2, 3];
+        let result = array1.concat(array2);
+        document.write(result);
+        
+        /* Дан масив ['a', 'b', 'c']. Додайте йому до кінця елементи 1, 2, 3. */
+        array1 = ['a', 'b', 'c'];
+        array1.push(1, 2, 3);
+        document.write(array1);
+        
+        /* Дан масив [1, 2, 3]. Зробіть із нього масив [3, 2, 1]. */
+        array1 = [1, 2, 3];
+        array1.reverse();
+        document.write(array1);
+
+        /* Дан масив [1, 2, 3]. Додайте йому до кінця елементи 4, 5, 6. */
+        array1 = [1, 2, 3];
+        array1.push(4, 5, 6);
+        document.write(array1);         
+
+        /* Дан масив [1, 2, 3]. Додайте йому на початок елементи 4, 5, 6. */
+        array1 = [1, 2, 3];
+        array1.unshift(4, 5, 6);
+        document.write(array1);        
+
+        /* Дан масив ['js', 'css', 'jq']. Виведіть перший елемент на екран. */
+        array1 = ['js', 'css', 'jq'];
+        document.write(array1[0]);
+
+        /* Дан масив [1, 2, 3, 4, 5]. За допомогою методу slice запишіть нові елементи [1, 2, 3]. */
+        array1 = [1, 2, 3, 4, 5];
+        array1 = array1.slice(0, 3);
+        document.write(array1);        
+
+        /* Дан масив [1, 2, 3, 4, 5]. За допомогою методу splice перетворіть масив на [1, 4, 5]. */
+        array1 = [1, 2, 3, 4, 5];
+        array1.splice(1, 2);
+        document.write(array1);         
+
+        /* Дан масив [1, 2, 3, 4, 5]. За допомогою методу splice перетворіть масив на [1, 2, 10, 3, 4, 5]. */
+        array1 = [1, 2, 3, 4, 5];
+        array1.splice(2, 0, 10);
+        document.write(array1);   
+
+        /* Дан масив [3, 4, 1, 2, 7]. Відсортуйте його. */
+        array1 = [3, 4, 1, 2, 7];
+        array1.sort();
+        document.write(array1);        
+
+        /* Дан масив з елементами 'Привіт, ', 'світ' і '!'. Потрібно вивести на екран фразу 'Привіт, мир!'. */
+        array1 = ['Привіт, ', 'світ', '!'];
+        document.write(array1.join(''));
+
+        /* Дан масив ['Привіт, ', 'світ', '!']. Необхідно записати в нульовий елемент цього масиву слово 'Поки, '
+            (тобто замість слова 'Привіт, ' буде 'Поки, '). */
+        array1 = ['Привіт, ', 'світ', '!'];
+        array1[0] = 'Поки, ';
+
+        /* Створіть масив arr з елементами 1, 2, 3, 4, 5 двома різними способами. */
+        let arr = [1, 2, 3, 4, 5];
+        arr = new Array(1, 2, 3, 4, 5);
+        
+        /* Створіть масив arr = ['a', 'b', 'c', 'd'] і за допомогою його виведіть на екран рядок 'a+b, c+d'. */
+        arr = ['a', 'b', 'c', 'd'];
+        document.write(`${arr[0]}+${arr[1]}, ${arr[2]}+${arr[3]}`);
+        
+        /* Запитайте у користувача кількість елементів масиву. Виходячи з даних, які ввів користувач
+        створіть масив на ту кількість елементів, яку передав користувач.
+        у кожному індексі масиву зберігайте чило який показуватиме номер елемента масиву. */
+        let arrayLength = parseInt(prompt("Введіть кількість елементів масиву"));
+        let arrayResult = new Array(arrayLength);
+        for (let i = 0; i < arrayResult.length; i++) {
+            arrayResult[i] = i;
+        } 
+        
+        /* Зробіть так, щоб з масиву, який ви створили вище, вивелися всі непарні числа в параграфі, а парні в спані з
+            червоним тлом. */
+        for (let i = 0; i < arrayResult.length; i++) {
+            if (arrayResult[i] % 2 === 0) {
+                document.write(`<span style="background-color: red;">${arrayResult[i]}</span>`);
+            } else {
+                document.write(`<p>${arrayResult[i]}</p>`);
+            }
+        } 
+
+        /* Напишіть код, який перетворює та об'єднує всі елементи масиву в одне рядкове значення. Елементи масиву
+            будуть розділені комою.
+            <pre>
+                <code>
+                var vegetables = ['Капуста', 'Ріпа', 'Редиска', 'Морковка'];
+
+                <span class="green">// Ваш код</span>
+
+                
+                document.write(str1); // "Капуста, Ріпа, Редиска, Морквина"
+                </code>
+                </pre> */
+        let vegetables = ['Капуста', 'Ріпа', 'Редиска', 'Морковка'];
+        let str1 = vegetables.join(", ");
+        document.write(str1);       
+    </script>
+</body>
+</html>
