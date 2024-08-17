@@ -10,7 +10,7 @@
 
 Создать пользователя с помощью функции createNewUser(). Вызвать у пользователя функцию getLogin(). Вывести в консоль результат выполнения функции.
 */
-class NewUser1 {
+class CreateNewUser1 {
     constructor(firstName, lastName) {
         this.firstName = ucFirst(firstName);
         this.lastName = ucFirst(lastName);
@@ -21,30 +21,32 @@ class NewUser1 {
     }
 }
 
-function createNewUser1() {
-    const userData = prompt("Введіть свої дані", "Ім'я Прізвище");
+function validateUserData(userData) {
     if (userData !== null) {
         if (userData) {
-            const [firstName, lastName] = userData.split(" ");
-            if (firstName && lastName) {
-                return new NewUser1(firstName, lastName);
+            userData = userData.split(" ");
+            if (userData[0] && userData[1]) {
+                return true;
             } else {
                 alert("Дані введені невірно!");
             }
         } else {
             alert("Дані не введені!");
-        }
-    }    
+        }       
+    }
+    return false;
 }
 
 function ucFirst(string) {
     return string[0].toUpperCase() + string.slice(1).toLowerCase();
 }
 
-const newUser = createNewUser1();
-if (newUser) {
-    console.log(newUser.getLogin());
-}
+const userData1 = prompt("Введіть свої дані", "Ім'я Прізвище");
+if (validateUserData(userData1)) {
+    const [firstName, lastName] = userData1.split(" ");
+    const newUser1 = new CreateNewUser1(firstName, lastName);
+    console.log(newUser1.getLogin());
+}    
     
 /**
 Дополнить функцию createNewUser() методами подсчета возраста пользователя и его паролем.
@@ -56,7 +58,7 @@ if (newUser) {
 Создать метод getPassword(), который будет возвращать первую букву имени пользователя в верхнем регистре, соединенную с фамилией (в нижнем регистре) и годом рождения. (например, Ivan Kravchenko 13.03.1992 → Ikravchenko1992). Вывести в консоль результат работы функции createNewUser(), а также функций getAge() и getPassword() созданного объекта.
 */
 
-class NewUser {
+class CreateNewUser {
     constructor(firstName, lastName, birthday) {
         this.firstName = ucFirst(firstName);
         this.lastName = ucFirst(lastName);
@@ -76,36 +78,36 @@ class NewUser {
     }
 }
 
-function createNewUser() {
-    const userData = prompt("Введіть свої дані", "Ім'я Прізвище");
-    if (userData !== null) {
-        if (userData) {
-            const [firstName, lastName] = userData.split(" ");
-            if (firstName && lastName) {
-                const birthday = prompt("Введіть дату народження", "dd.mm.yyyy");
-                const [day, month, year] = birthday.split(".");
-                if (day && month && year) {
-                    const birthdayDate = new Date(year, parseInt(month) - 1, day);
-                    if (birthdayDate.toString() !== "Invalid Date") {
-                        return new NewUser(firstName, lastName, birthdayDate);
-                    } else {
-                        alert("Дата народження не вірна");
-                    }                   
-                } else {
-                    alert("Дата народження не вірна");
-                }
-            } else {
-                alert("Дані введені невірно!");
-            }
+function validateBirthday(day, month, year) {
+    if (day && month && year) {
+        const birthdayDate = new Date(year, parseInt(month) - 1, day);
+        if (birthdayDate.toString() !== "Invalid Date") {
+            return true;
         } else {
-            alert("Дані не введені!");
-        }
-    }    
+            alert("Дата народження не вірна");
+        }                   
+    } else {
+        alert("Дата народження не вірна");
+    }
+    return false;
 }
 
-const newUser1 = createNewUser();
-if (newUser1) {
-    console.log(newUser1.getLogin());
-    console.log(newUser1.getPassword());
-    console.log(newUser1.getAge());
+function createBirthdayDate(birthday) {
+    const [day, month, year] = birthday.split(".");
+    if (validateBirthday(day, month, year)) {
+        return new Date(year, parseInt(month) - 1, day);
+    }
+    return false;
 }
+
+const userData = prompt("Введіть свої дані", "Ім'я Прізвище");
+if (validateUserData(userData)) {
+    const [firstName, lastName] = userData.split(" ");
+    const birthday = prompt("Введіть дату народження", "dd.mm.yyyy");
+    const birthdayDate = createBirthdayDate(birthday);
+    if (birthdayDate) {
+        const newUser = new CreateNewUser(firstName, lastName, birthdayDate);
+        console.log(newUser.getPassword());
+        console.log(newUser.getAge());
+    }                  
+}    
