@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Работа с узлами DOM</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!--https://developer.mozilla.org/ru/docs/Web/API/Element/outerHTML-->
+    <ul id="list">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+    <br />
+    <input type="button" id="selectFirstChild" value="Выбрать первый элемент" /><br />
+    <input type="button" id="selectLastChild" value="Выбрать последний элемент" /><br />
+    <input type="button" id="selectNextNode" value="Выбрать следующий элемент" /><br />
+    <input type="button" id="selectPrevNode" value="Выбрать предыдущий элемент" /><br />
+    <input type="button" id="createNewFirstChild" value="Добавить элемент початок" /><br />
+    <input type="button" id="createNewLastChild" value="Добавить элемент в кінець" /><br />
+    <input type="button" id="removeFirstChild" value="Удалить элемент з початку" /><br />
+    <input type="button" id="removeLastChild" value="Удалить элемент з кінця" /><br />
+
+    <hr>
+    <!--4. Створіть 2 інпути та одну кнопку. Зробіть так, щоб інпути обмінювалися вмістом.-->
+    <div class="task2">
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <button id="swap">Swap</button>
+    </div>
+    
+    <script src="script/script.js"></script>
+</body>
+
+</html>

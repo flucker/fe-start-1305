@@ -1,0 +1,20 @@
+li{
+    width: fit-content;
+}
+input{
+    width: 210px;
+    margin-bottom: 10px;
+}
+.selected{
+    font-weight: bold;
+    background-color: rgb(164, 248, 148);
+}
+.task2{
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px;
+}
+#swap{
+    grid-column: span 2;
+}
