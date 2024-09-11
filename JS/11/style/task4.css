@@ -1,0 +1,27 @@
+.active{
+    outline: 2px solid green;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    margin: 0 auto;
+}
+input{
+    width: 100%;
+}
+.price{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.success{
+    color: green;
+}
+.error{
+    border: 2px solid red;
+}
